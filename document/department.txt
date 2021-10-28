@@ -1,0 +1,89 @@
+public class Department{
+    private Long departmentId;
+    private String departmentName;
+    private String establishmeYear;
+    private List<UnderGraduate> underGraduates;
+}
+
+public class UnderGraduate {
+    private Long ugId;
+    private String ugProgram;
+    private String ugCode;
+    private String startYear;
+    private Department department;
+    private List<UGCourse> courses;
+}
+
+public class UGCourse {
+    private Long coursesId;
+    private UnderGraduate underGraduate;
+    private String year;
+    private String semester;
+    private String code;
+    private String name;
+    private String yoi;
+    private Boolean elective;
+    private Boolean cbcs;
+}
+
+public class PostGraduate {
+    private Long pgId;
+    private String pgProgram;
+    private String pgCode;
+    private String startYear;
+    private Department department;
+    private List<Course> courses;
+}
+
+public class PGCourse {
+    private Long coursesId;
+    private PostGraduate postGraduate;
+    private String year;
+    private String semester;
+    private String code;
+    private String name;
+    private String yoi;
+    private Boolean elective;
+    private Boolean cbcs;
+}
+
+public class Program {
+    private Long programId;
+    private String programType;
+    private String programName;
+    private String programYear;
+}
+
+public class admittedStudent {
+    private Long id;
+    private String name;
+    private String class;
+    private String category;
+}
+
+public class ResearchProgram {
+    private Long programId;
+    private String programType;
+    private String programName;
+    private String programYear;
+    private String class;
+}
+
+public class Guide {
+    private Long guideId;
+    private String guideName;
+    private String letterOn;
+    private Date letterDate;
+    private String document;
+}
+
+public class admittedResearchStudent {
+    private Long id;
+    private Program program;
+    private String studentName;
+    private String category;
+    private Guide guide;
+    private Date registrationDate;
+    private String topicTitle;
+    private Date declarationDate;
+}

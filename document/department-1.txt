@@ -1,0 +1,66 @@
+public class Department{
+    private Long departmentId;
+    private String departmentName;
+    private String establishmeYear;
+    private List<Program> programs;
+}
+
+public class Program {
+    private Long programId;
+    program String programType;
+    private String programName;
+    private String programCode;
+    private String startYear;
+    private Department department;
+    private List<Course> courses;
+    private List<AdmittedStudent> admittedStudents;
+}
+
+public class Course {
+    private Long coursesId;
+    private Program program;
+    private String year;
+    private String semester;
+    private String code;
+    private String name;
+    private String yoi;
+    private Boolean elective;
+    private Boolean cbcs;
+}
+
+public class Guide {
+    private Long guideId;
+    private String guideName;
+    private String letterOn;
+    private Date letterDate;
+    private String document;
+}
+
+public class AdmittedStudent {
+    private Long id;
+    private Program program;
+    private String name;
+    private String class;
+    private String category;
+}
+
+public class ResearchProgram {
+    private Long programId;
+    private String programType;
+    private String programName;
+    private String programYear;
+    private String class;
+    private List<AdmittedResearchStudent> admittedResearchStudents;
+}
+
+public class AdmittedResearchStudent {
+    private Long id;
+    private ResearchProgram researchProgram;
+    private String studentName;
+    private String category;
+    private Guide guide;
+    private Date registrationDate;
+    private String topicTitle;
+    private Date declarationDate;
+    private String document;
+}

@@ -1,0 +1,100 @@
+public class Teacher {
+    private Long teacherId;
+    private String firstName;
+    private String middleName;
+    private String lastName;
+    private Date dob;
+    private String aadharNumber;
+    private String aadharDocument;
+    private String panNumber;
+    private String panDocument;
+    private UGQualification ugQualification;
+    private PGQualification pgQualification;
+    private EntranceQualification entranceQualification;
+    private ResearchQualification researchQualification;
+    private List<TeacherAppointment> teacherAppointments;
+    private List<TeacherApproval> teacherApprovals;
+    private List<TeacherTransfer> teacherTransfers;
+}
+
+public class UGQualification {
+    private Long id;
+    private String degree;
+    private String university;
+    private String yop;
+    private String specialization;
+    private String grade;
+    private String document;
+}
+
+public class PGQualification {
+    private Long id;
+    private String degree;
+    private String university;
+    private String yop;
+    private String specialization;
+    private String grade;
+    private String document;
+}
+
+public class EntranceQualification {
+    private Long id;
+    private String name;
+    private String yop;
+    private String subject;
+    private String university;
+}
+
+public class ResearchQualification {
+    private Long id;
+    private String degree;
+    private Date dateOfDeclaration;
+    private String subject;
+    private String university;
+}
+
+public class TeacherAppointment {
+    private Long id;
+    private Date appointmentDate;
+    private String orderNumber
+    private AppointmentType appointmentType;
+    private Designation designation;
+    private String document;
+}
+
+public class TeacherApproval {
+    private Long id;
+    private Date approvalDate;
+    private String letterNumber
+    private AppointmentType approvalType;
+    private Designation designation;
+    private String document;
+}
+
+public class TeacherTeaching {
+    private Long id;
+    private 
+}
+
+public class TeacherTransfer {
+    private Long id;
+    private Date TransferDate;
+    private String orderNumber;
+    private String TransferFrom;
+    private String document;
+}
+
+public Enum AppointmentType {
+    "Full time",
+    "Part time",
+    "Ad hoc",
+    "Contractual",
+    "Temporary",
+    "CHB"
+}
+
+public Enum Designation {
+    "Professor",
+    "Associate professor",
+    "Assistant professor"
+}
