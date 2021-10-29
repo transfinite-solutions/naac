@@ -64,3 +64,17 @@ public class AdmittedResearchStudent {
     private Date declarationDate;
     private String document;
 }
+
+public class TeachingDetail {
+    private Long id;
+    private String academicYear;
+    private Teacher teacher;
+    private List<Course> courses;
+    private CourseType courseType;
+}
+
+public Enum CourseType {
+    "Theory",
+    "Practical",
+    "Project work"
+}

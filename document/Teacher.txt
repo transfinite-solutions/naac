@@ -15,13 +15,18 @@ public class Teacher {
     private List<TeacherAppointment> teacherAppointments;
     private List<TeacherApproval> teacherApprovals;
     private List<TeacherTransfer> teacherTransfers;
+    private List<FacultyProgram> facultyPrograms;
+    private List<FacultySeminar> facultySeminars;
+    private List<PaperPresented> paperPresenteds;
+    private List<ResearchPublication> researchPublications;
+    private List<BookPublication> bookPublications;
 }
 
 public class UGQualification {
     private Long id;
     private String degree;
     private String university;
-    private String yop;
+    private String yearOfPassing;
     private String specialization;
     private String grade;
     private String document;
@@ -31,7 +36,7 @@ public class PGQualification {
     private Long id;
     private String degree;
     private String university;
-    private String yop;
+    private String yearOfPassing;
     private String specialization;
     private String grade;
     private String document;
@@ -40,7 +45,7 @@ public class PGQualification {
 public class EntranceQualification {
     private Long id;
     private String name;
-    private String yop;
+    private String yearOfPassing;
     private String subject;
     private String university;
 }
@@ -71,11 +76,6 @@ public class TeacherApproval {
     private String document;
 }
 
-public class TeacherTeaching {
-    private Long id;
-    private 
-}
-
 public class TeacherTransfer {
     private Long id;
     private Date TransferDate;
@@ -98,3 +98,109 @@ public Enum Designation {
     "Associate professor",
     "Assistant professor"
 }
+
+public class FacultyProgram {
+    private Long id;
+    private String academicYear;
+    private FacultyProgramType facultyProgramType;
+    private String titleOfCourse;
+    private String placeOfCourse;
+    private Date startDate;
+    private Date endDate;
+    private String document;
+}
+
+public Enum FacultyProgramType {
+    "Refresher Course",
+    "Orientation Course",
+    "Training programme",
+    "Faculty Development"
+}
+
+public class FacultySeminar {
+    private Long id;
+    private String academicYear;
+    private FacultySeminarLevel facultySeminarLevel;
+    private FacultySeminarType facultySeminarType;
+    private String title;
+    private String place;
+    private Date startDate;
+    private Date endDate;
+    private String role;    // need to confirm for type is enum or string
+    private String document;
+}
+
+public Enum FacultySeminarLevel {
+    "University",
+    "State",
+    "National",
+    "International"
+}
+
+public Enum FacultySeminarType {
+    "conference",
+    "workshop",
+    "Seminar",
+    "Symposium"
+}
+
+public class PaperPresented {
+    private Long id;
+    private String academicYear;
+    private FacultySeminarLevel facultySeminarLevel;
+    private FacultySeminarType facultySeminarType;
+    private String title;
+    private String titleOfPaper;
+    private Date startDate;
+    private Date endDate;
+    private String role;
+    private String document;
+}
+
+public class ResearchPublication {
+    private Long id;
+    private String academicYear;
+    private ResearchPublicationType researchPublicationType;
+    private String titleOfPaper;
+    private String author;
+    private String journalName;
+    private String volume;
+    private String issue;
+    private String pageNo;
+    private String year;
+    private String issnNo;
+    private Boolean approvedByUGS;
+    private String role;    // need to confirm for type is enum or string
+    private String linkOfResearchPaper;
+}
+
+public Enum ResearchPublicationType {
+    "Research Article",
+    "Review Article"
+}
+
+public class BookPublication {
+    private Long id;
+    private String academicYear;
+    private BookType bookType;
+    private String titleOfBook;
+    private String author;
+    private String publishers;
+    private String yearOfPublication;
+    private String edition;
+    private String role;    // need to confirm for type is enum or string
+    private PublicationType publicationType;
+    private String document;
+}
+
+public Enum BookType {
+    "Research Article",
+    "Review Article"
+}
+
+public Enum PublicationType {
+    "Local",
+    "National",
+    "International"
+}
+
