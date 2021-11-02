@@ -1,0 +1,100 @@
+public class Commitee {
+    private Long id;
+    private String name;
+    private String password;
+    private List<YearDetail> yearDetails;
+    private List<Achievement> achievements;
+}
+
+public class YearDetail {
+    private Long id;
+    private String academicYear;
+    private Commitee commitee;
+    private List<CommiteeMember> commiteeMembers;
+    private List<AcademicCalender> academicCalenders;
+    private List<MeetingRecord> meetingRecords;
+    private List<ReportOfActivities> reportOfActivities;
+    private List<StudentAchievement> studentAchievement
+}
+
+public class CommiteeMember {
+    private Long id;
+    private String memberName;
+    private CommiteeMemberRole commiteeMemberRole;
+    private String mobileNo;
+    private String emailId;
+}
+
+public class AcademicCalender {
+    private Long id;
+    private String titleOfActivity;
+    private Date proposedDate;
+}
+
+public class MeetingRecord {
+    private Long id;
+    private String agenda;
+    private Date MeetingDate;
+    private String document;
+}
+
+public class ReportOfActivities {
+    private Long id;
+    private String titleOfActivity;
+    private Date fromDate;
+    private Date toDate;
+    private Long noOfTeachers
+    private Long noOfStudent;
+    private String reportBrief;
+    private String supportingAgency;
+    private String photographs;  //document
+    private String newsReport;  //document
+    private String listOfParticipants //document
+}
+
+public class Achievement {
+    private Long id;
+    private String year;
+    private String nameOfAward;
+    private String awardingAgency;
+    private AchievementLevel achievementLevel;
+    private String achievementCertificate; //document
+}
+
+public class studentAchievment {
+    private Long id;
+    private String nameOfStudent;
+    private String awardingAgency;
+    private AchievementNature achievementNature;
+    private AchievementLevel achievementLevel;
+    private String studentCertificate;  //document
+}
+
+public Enum CommiteeMemberRole {
+    "Chairman",
+    "Coordinator",
+    "Member – teacher",
+    "Member – staff",
+    "Member – student",
+    "Member - alumni"
+}
+
+public Enum AchievementNature {
+    "Gold medal",
+    "Silver medal",
+    "Bonze medal",
+    "Certificate",
+    "First prize",
+    "Second prize",
+    "Third prize",
+    "Other"
+}
+
+public Enum AchievementLevel {
+    "International",
+    "National",
+    "State",
+    "University",
+    "Local body",
+    "NGO"
+}
