@@ -1,0 +1,102 @@
+public class Office {
+    private Long id;
+    private String name;
+    private String email;
+    private Role role;
+    private String password;
+}
+
+public class StudentData {
+    private Long id;
+    private Office office;
+    private String academicYear;
+    private String studentList;     //document
+    private List<RollCall> roleCallList;
+}
+
+public class ScholarshipData {
+    private Long id;
+    private Office office;
+    private String academicYear;
+    private List<GovernmentScholarship> governmentScholarship;
+}
+
+public class GovernmentScholarship {
+    private Long id;
+    private String scholarshipScheme;
+    private Long noOfStudent;
+    private Long amount;
+    private String sanctionLetter;      //document
+    private String studentList;     //document
+    private String otherDetail = null;
+}
+
+public class InstitutionalScholarship {
+    private Long id;
+    private String scholarshipScheme;
+    private String awardingAgency;
+    private Long noOfStudent;
+    private Long amount;
+    private String sanctionLetter;      //document
+    private String studentList;     //document
+}
+
+public class Finance {
+    private Long id;
+    private String financialYear;
+    private String budget;      //document
+    private Long expenditureWithSalary;
+    private Long expenditureWithoutSalary;
+    private String auditReport;     //document
+    private Long physicalFacilityBudget;
+    private List<Expenditure> expenditure;
+    private Long academicFacilityBudget;
+    private List<Expenditure> expenditure;
+    private Long libraryFacilityBudget;
+    private List<Expenditure> expenditure;
+    private Long MaintenanceFacilityBudget;
+    private List<MaintenanceExpenditure> maintenanceExpenditure;
+}
+
+public class Expenditure {
+    private Long id;
+    private String item;
+    private Long amount;
+}
+
+public class MaintenanceExpenditure {
+    private Long id;
+    private String item;
+    private Long amount;
+    private String Facility;
+}
+
+public class RollCall {
+    private Long id;
+    private String class;
+    private String division;
+    private String subject;
+    private String rollCallList;    //document
+}
+
+public Enum Role {
+    "officeClerk",
+    "scholarshipClerk",
+    "Accountant"
+}
+
+
+
+
+
+//Not to be used scholarship scheme varify from specified list
+public Enum ScholarshipScheme {
+    "SC scholarship",
+    "SC free ship",
+    "ST Scholarship",
+    "ST Freeship",
+    "OBC scholarship",
+    "OBC freeship",
+    "Minority scholarship",
+    "Other"
+}
