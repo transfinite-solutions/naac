@@ -78,3 +78,31 @@ public Enum CourseType {
     "Practical",
     "Project work"
 }
+
+public class DepartmentEvent {
+    private Long id;
+    private String title;
+    private Date fromDate;
+    private Date toDate;
+    private Long noOfTeacher;
+    private Long noOfStudent;
+    private String reportBrief;
+    private String supportingAgency;
+    private String photographs;  //document
+    private String newsReport;  //document
+    private String listOfParticipants;  //document
+}
+
+public class DepartmentSchool {
+    private Long id;
+    private String title;
+    private Date fromDate;
+    private Date toDate;
+    private Long noOfTeacher;
+    private Long noOfStudent;
+    private String reportBrief;
+    private String supportingAgency;
+    private String photographs;  //document
+    private String newsReport;  //document
+    private String listOfParticipants;  //document
+}

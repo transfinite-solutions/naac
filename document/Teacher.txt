@@ -204,3 +204,143 @@ public Enum PublicationType {
     "International"
 }
 
+
+
+
+//Teaching section
+
+public class TeachingPlan {
+    private Long id;
+    private String academicYear;
+    private String semester;
+    private String class;
+    private String division;
+    private Course course;
+    private List<CourseLecture> courseLecture;
+    private List<TeachingOutcome> teachingOutcomes;
+}
+
+private class CourseLecture {
+    private Long id;
+    private Date month;     /// Need to verify type of field
+    private Long week;
+    private Long noOfLectures;
+    private Long nofOfTutorials;
+    private String topic;
+    private String assignment;
+    private String modeOfTeaching;
+}
+
+/*  public class TeachingOutcome {
+    private Long id;
+    //private TeachingPlan teachingPlan;
+    private String class;
+    private String division;
+    private Course course;
+
+    private int courseOutcome;     //field only for frontend
+    private int programOutcome;     //field only for frontend
+}  */ 
+
+public class TeachingOutcome {
+    private Long id;
+    private Program program;
+    private Course course;
+    private Long correlationValue;
+}
+
+public class AttendanceRecord {
+    private Long id;
+    //private TeachingPlan teachingPlan;
+    private String class;
+    private String division;
+    private Course course;
+    private Date month;     /// Need to verify type of field
+    private String attendance;      //document
+}
+
+public class InternalAssessment {
+    private Long id;
+    private TeachingPlan teachingPlan;
+    private String internalTest;
+    private String testType;
+    private Long totalMarks;
+    private List<DistributedMark> distributedMarks;
+    private List<StudentCourseMapping> studentCourseMappings;
+    private List<AttainmentLevel> attainmentsLevels;
+    private List<RequiredAttainment> requiredAttainment;
+}
+
+public class DistributedMark {
+    private Long id;
+    private Course course;
+    private Long totalMark;
+}
+
+public class StudentCourseMapping {
+    private Long id;
+    private Student student;
+    private List<AllotedMark> allotedMarks;
+}
+
+public class AllotedMark {
+    private Long id;
+    private Course course;
+    private Long mark;
+}
+
+public class AttainmentLevel {
+    private Long id;
+    private Long level;
+    private Double startRange;
+    private Double endRange;
+}
+
+public class RequiredAttainment {
+    private Long id;
+    private Course course;
+    private AttainmentLevel attainmentLevel;
+}
+
+public class ProjectWork {
+    private Long id;
+    //private TeachingPlan teachingPlan;
+    private String class;
+    private String division;
+    private Course course;
+    private List<StudentProject> studentProjects;
+}
+
+public class StudentProject {
+    private Long id;
+    private Long rollNumber;
+    private String studentName;
+    private String projectTitle;
+    private String certificate;
+}
+
+public class ResearchStudent {
+    private Long id;
+    private String academicYear;
+    private PHDRegisteredStudent phdRegisteredStudent;
+    private PHDDeclaration phdDeclaration;
+}
+
+public class PHDRegisteredStudent {
+    private Long id;
+    private String studentName;
+    private String title;
+    private Date registrationDate;
+    private String researchCentre;
+    private String certificate;     //document
+}
+
+public class PHDDeclarartion {
+    private Long id;
+    private String studentName;
+    private String title;
+    private Date registrationDate;
+    private Date dateOfDeclaration;
+    private String researchCentre;
+    private String certificate;
+}

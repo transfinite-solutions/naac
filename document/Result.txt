@@ -1,0 +1,7 @@
+public class result {
+    private Long id;
+    private String excelFormat;
+    private String academicYear;
+    private Course course;
+    private String result;      //document
+}

@@ -49,7 +49,7 @@ public class ReportOfActivities {
     private String supportingAgency;
     private String photographs;  //document
     private String newsReport;  //document
-    private String listOfParticipants //document
+    private String listOfParticipants; //document
 }
 
 public class Achievement {
