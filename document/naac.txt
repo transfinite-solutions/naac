@@ -1,0 +1,684 @@
+public class User {
+    private Long id;
+    private String firstName;
+    private String middleName;
+    private String lastName;
+    private Date dob;
+    private String email;
+    private String phone;
+    private String password;
+    private Role role;
+    private Date createdAt = Date.now();
+    private Student student;        //one to one mapping
+    private Teacher teacher;        //one to one mapping
+    private Hod hod;                //one to one mapping
+}
+
+public Enum Role {
+    "Admin",
+    "IQAC",
+    "Hod",
+    "Teacher",
+    "Student",
+    "OfficeClerk",
+    "ScholarshipClerk",
+    "Accountant",
+    "Librarian"
+}
+
+public class Student {
+    private Long id;
+    private User user;
+    private String aadharNumber;
+    private String aadharDocument;      //document
+    private String panNumber;
+    private String panDocument;
+    private Double tenthMarks;
+    private Double twelthMarks;
+    private Date startDate;
+    private Date completionDate;
+    private String fatherName;
+    private String motherName;
+    private String fatherContact;
+    private String motherContact;
+    private Program program;        //program many to one mapping
+}
+
+public class Teacher {
+    private Long id;
+    private User user;
+    private String aadharNumber;
+    private String aadharDocument;
+    private String panNumber;
+    private String panDocument;
+    private UGQualification ugQualification;
+    private PGQualification pgQualification;
+    private EntranceQualification entranceQualification;
+    private ResearchQualification researchQualification;
+    private List<TeacherAppointment> teacherAppointments;
+    private List<TeacherApproval> teacherApprovals;
+    private List<TeacherTransfer> teacherTransfers;
+    private List<FacultyProgram> facultyPrograms;
+    private List<FacultySeminar> facultySeminars;
+    private List<PaperPresented> paperPresenteds;
+    private List<ResearchPublication> researchPublications;
+    private List<BookPublication> bookPublications;
+}
+
+public class Hod {
+    private Long id;
+    private User user;
+    private String aadharNumber;
+    private String aadharDocument;
+    private String panNumber;
+    private String panDocument;
+    private UGQualification ugQualification;
+    private PGQualification pgQualification;
+    private EntranceQualification entranceQualification;
+    private ResearchQualification researchQualification;
+    private List<TeacherAppointment> teacherAppointments;
+    private List<TeacherApproval> teacherApprovals;
+    private List<TeacherTransfer> teacherTransfers;
+    private List<PaperPresented> paperPresenteds;
+    private List<ResearchPublication> researchPublications;
+    private List<BookPublication> bookPublications;
+}
+
+public class UGQualification {
+    private Long id;
+    private String degree;
+    private String university;
+    private String yearOfPassing;
+    private String specialization;
+    private String grade;
+    private String document;
+}
+
+public class PGQualification {
+    private Long id;
+    private String degree;
+    private String university;
+    private String yearOfPassing;
+    private String specialization;
+    private String grade;
+    private String document;
+}
+
+public class EntranceQualification {
+    private Long id;
+    private String name;
+    private String yearOfPassing;
+    private String subject;
+    private String university;
+}
+
+public class ResearchQualification {
+    private Long id;
+    private String degree;
+    private Date dateOfDeclaration;
+    private String subject;
+    private String university;
+}
+
+public class TeacherAppointment {
+    private Long id;
+    private Date appointmentDate;
+    private String orderNumber
+    private AppointmentType appointmentType;
+    private Designation designation;
+    private String document;
+}
+
+public class TeacherApproval {
+    private Long id;
+    private Date approvalDate;
+    private String letterNumber
+    private AppointmentType approvalType;
+    private Designation designation;
+    private String document;
+}
+
+public class TeacherTransfer {
+    private Long id;
+    private Date TransferDate;
+    private String orderNumber;
+    private String TransferFrom;
+    private String document;
+}
+
+public Enum AppointmentType {
+    "Full time",
+    "Part time",
+    "Ad hoc",
+    "Contractual",
+    "Temporary",
+    "CHB"
+}
+
+public Enum Designation {
+    "Professor",
+    "Associate professor",
+    "Assistant professor"
+}
+
+public class FacultyProgram {
+    private Long id;
+    private String academicYear;
+    private FacultyProgramType facultyProgramType;
+    private String titleOfCourse;
+    private String placeOfCourse;
+    private Date startDate;
+    private Date endDate;
+    private String document;
+}
+
+public Enum FacultyProgramType {
+    "Refresher Course",
+    "Orientation Course",
+    "Training programme",
+    "Faculty Development"
+}
+
+public class FacultySeminar {
+    private Long id;
+    private String academicYear;
+    private FacultySeminarLevel facultySeminarLevel;
+    private FacultySeminarType facultySeminarType;
+    private String title;
+    private String place;
+    private Date startDate;
+    private Date endDate;
+    private String role;    // need to confirm for type is enum or string
+    private String document;
+}
+
+public Enum FacultySeminarLevel {
+    "University",
+    "State",
+    "National",
+    "International"
+}
+
+public Enum FacultySeminarType {
+    "conference",
+    "workshop",
+    "Seminar",
+    "Symposium"
+}
+
+public class PaperPresented {
+    private Long id;
+    private String academicYear;
+    private FacultySeminarLevel facultySeminarLevel;
+    private FacultySeminarType facultySeminarType;
+    private String title;
+    private String titleOfPaper;
+    private Date startDate;
+    private Date endDate;
+    private String role;
+    private String document;
+}
+
+public class ResearchPublication {
+    private Long id;
+    private String academicYear;
+    private ResearchPublicationType researchPublicationType;
+    private String titleOfPaper;
+    private String author;
+    private String journalName;
+    private String volume;
+    private String issue;
+    private String pageNo;
+    private String year;
+    private String issnNo;
+    private Boolean approvedByUGS;
+    private String role;    // need to confirm for type is enum or string
+    private String linkOfResearchPaper;
+}
+
+public Enum ResearchPublicationType {
+    "Research Article",
+    "Review Article"
+}
+
+public class BookPublication {
+    private Long id;
+    private String academicYear;
+    private BookType bookType;
+    private String titleOfBook;
+    private String author;
+    private String publishers;
+    private String yearOfPublication;
+    private String edition;
+    private String role;    // need to confirm for type is enum or string
+    private PublicationType publicationType;
+    private String document;
+}
+
+public Enum BookType {
+    "Research Article",
+    "Review Article"
+}
+
+public Enum PublicationType {
+    "Local",
+    "National",
+    "International"
+}
+
+public class Commitee {
+    private Long id;
+    private String name;
+    private Date createdAt;
+    private List<YearDetail> yearDetails;
+    private List<Achievement> achievements;
+}
+
+public class YearDetail {
+    private Long id;
+    private String academicYear;
+    private Commitee commitee;
+    private List<CommiteeMember> commiteeMembers;
+    private List<AcademicCalender> academicCalenders;
+    private List<MeetingRecord> meetingRecords;
+    private List<ReportOfActivities> reportOfActivities;
+    private List<StudentAchievement> studentAchievement
+}
+
+public class CommiteeMember {
+    private Long id;
+    private String memberName;
+    private CommiteeMemberRole commiteeMemberRole;
+    private String mobileNo;
+    private String emailId;
+}
+
+public class AcademicCalender {
+    private Long id;
+    private String titleOfActivity;
+    private Date proposedDate;
+}
+
+public class MeetingRecord {
+    private Long id;
+    private String agenda;
+    private Date MeetingDate;
+    private String document;
+}
+
+public class ReportOfActivities {
+    private Long id;
+    private String titleOfActivity;
+    private Date fromDate;
+    private Date toDate;
+    private Long noOfTeachers
+    private Long noOfStudent;
+    private String reportBrief;
+    private String supportingAgency;
+    private String photographs;  //document
+    private String newsReport;  //document
+    private String listOfParticipants; //document
+}
+
+public class Achievement {
+    private Long id;
+    private String year;
+    private String nameOfAward;
+    private String awardingAgency;
+    private AchievementLevel achievementLevel;
+    private String achievementCertificate; //document
+}
+
+public class studentAchievment {
+    private Long id;
+    private String nameOfStudent;
+    private String awardingAgency;
+    private AchievementNature achievementNature;
+    private AchievementLevel achievementLevel;
+    private String studentCertificate;  //document
+}
+
+public Enum CommiteeMemberRole {
+    "Chairman",
+    "Coordinator",
+    "Member – teacher",
+    "Member – staff",
+    "Member – student",
+    "Member - alumni"
+}
+
+
+//////////////Need to provide on frontend side as it include other option//////////////
+public Enum AchievementNature {
+    "Gold medal",
+    "Silver medal",
+    "Bonze medal",
+    "Certificate",
+    "First prize",
+    "Second prize",
+    "Third prize",
+    "Other"
+}
+
+public Enum AchievementLevel {
+    "International",
+    "National",
+    "State",
+    "University",
+    "Local body",
+    "NGO"
+}
+
+public class StudentData {
+    private Long id;
+    private String academicYear;
+    //private String studentList;     //document
+    private List<User> studentList;
+    private List<RollCall> roleCallList;
+}
+
+public class RollCall {
+    private Long id;
+    private String class;
+    private String division;
+    private String subject;
+    private String rollCallList;    //document
+}
+
+public class GovernmentScholarship {
+    private Long id;
+    private String academicYear;
+    private String scholarshipScheme;
+    private Long noOfStudent;
+    private Long amount;
+    private String sanctionLetter;      //document
+    private String studentList;     //document
+    private String otherDetail = null;
+}
+
+public class InstitutionalScholarship {
+    private Long id;
+    private String academicYear;
+    private String scholarshipScheme;
+    private String awardingAgency;
+    private Long noOfStudent;
+    private Long amount;
+    private String sanctionLetter;      //document
+    private String studentList;     //document
+}
+
+public class Finance {
+    private Long id;
+    private String financialYear;
+    private String budget;      //document
+    private Long expenditureWithSalary;
+    private Long expenditureWithoutSalary;
+    private String auditReport;     //document
+    private Long physicalFacilityBudget;
+    private List<Expenditure> expenditure;
+    private Long academicFacilityBudget;
+    private List<Expenditure> expenditure;
+    private Long libraryFacilityBudget;
+    private List<Expenditure> expenditure;
+    private Long MaintenanceFacilityBudget;
+    private List<MaintenanceExpenditure> maintenanceExpenditure;
+}
+
+public class Expenditure {
+    private Long id;
+    private String item;
+    private Long amount;
+}
+
+public class MaintenanceExpenditure {
+    private Long id;
+    private String item;
+    private Long amount;
+    private String Facility;
+}
+
+public class Department{
+    private Long departmentId;
+    private String departmentName;
+    private String establishmeYear;
+    private List<Program> programs;
+}
+
+public class Program {
+    private Long programId;
+    program String programType;
+    private String programName;
+    private String programCode;
+    private String startYear;
+    private Department department;
+    private List<Course> courses;
+    private List<AdmittedStudent> admittedStudents;
+}
+
+public class Course {
+    private Long coursesId;
+    private Program program;
+    private String year;
+    private String semester;
+    private String code;
+    private String name;
+    private String yoi;
+    private Boolean elective;
+    private Boolean cbcs;
+}
+
+public class Guide {
+    private Long guideId;
+    private String guideName;
+    private String letterOn;
+    private Date letterDate;
+    private String document;
+}
+
+public class AdmittedStudent {
+    private Long id;
+    private Program program;
+    private String name;
+    private String class;
+    private String category;
+}
+
+public class ResearchProgram {
+    private Long programId;
+    private String programType;
+    private String programName;
+    private String programYear;
+    private String class;
+    private List<AdmittedResearchStudent> admittedResearchStudents;
+}
+
+public class AdmittedResearchStudent {
+    private Long id;
+    private ResearchProgram researchProgram;
+    private String studentName;
+    private String category;
+    private Guide guide;
+    private Date registrationDate;
+    private String topicTitle;
+    private Date declarationDate;
+    private String document;
+}
+
+public class ReportOfEvent {
+    private Long id;
+    private String title;
+    private Date fromDate;
+    private Date toDate;
+    private Long noOfTeacher;
+    private Long noOfStudent;
+    private String reportBrief;
+    private String supportingAgency;
+    private String photographs;  //document
+    private String newsReport;  //document
+    private String listOfParticipants;  //document
+}
+
+public class ReportOfSchool {
+    private Long id;
+    private String title;
+    private Date fromDate;
+    private Date toDate;
+    private Long noOfTeacher;
+    private Long noOfStudent;
+    private String reportBrief;
+    private String supportingAgency;
+    private String photographs;  //document
+    private String newsReport;  //document
+    private String listOfParticipants;  //document
+}
+
+public class TeachingDetail {
+    private Long id;
+    private String academicYear;
+    private Teacher teacher;
+    private List<Course> courses;
+    private CourseType courseType;
+}
+
+public Enum CourseType {
+    "Theory",
+    "Practical",
+    "Project work"
+}
+
+
+public class TeachingPlan {
+    private Long id;
+    private String academicYear;
+    private String semester;
+    private String class;
+    private String division;
+    private Course course;
+    private List<CourseLecture> courseLecture;
+    private List<TeachingOutcome> teachingOutcomes;
+}
+
+private class CourseLecture {
+    private Long id;
+    private Date month;     /// Need to verify type of field
+    private Long week;
+    private Long noOfLectures;
+    private Long nofOfTutorials;
+    private String topic;
+    private String assignment;
+    private String modeOfTeaching;
+}
+
+/*  public class TeachingOutcome {
+    private Long id;
+    //private TeachingPlan teachingPlan;
+    private String class;
+    private String division;
+    private Course course;
+
+    private int courseOutcome;     //field only for frontend
+    private int programOutcome;     //field only for frontend
+}  */ 
+
+public class TeachingOutcome {
+    private Long id;
+    private Program program;
+    private Course course;
+    private Long correlationValue;
+}
+
+public class AttendanceRecord {
+    private Long id;
+    //private TeachingPlan teachingPlan;
+    private String class;
+    private String division;
+    private Course course;
+    private Date month;     /// Need to verify type of field
+    private String attendance;      //document
+}
+
+public class InternalAssessment {
+    private Long id;
+    private TeachingPlan teachingPlan;
+    private String internalTest;
+    private String testType;
+    private Long totalMarks;
+    private List<DistributedMark> distributedMarks;
+    private List<StudentCourseMapping> studentCourseMappings;
+    private List<AttainmentLevel> attainmentsLevels;
+    private List<RequiredAttainment> requiredAttainment;
+}
+
+public class DistributedMark {
+    private Long id;
+    private Course course;
+    private Long totalMark;
+}
+
+public class StudentCourseMapping {
+    private Long id;
+    private Student student;
+    private List<AllotedMark> allotedMarks;
+}
+
+public class AllotedMark {
+    private Long id;
+    private Course course;
+    private Long mark;
+}
+
+public class AttainmentLevel {
+    private Long id;
+    private Long level;
+    private Double startRange;
+    private Double endRange;
+}
+
+public class RequiredAttainment {
+    private Long id;
+    private Course course;
+    private AttainmentLevel attainmentLevel;
+}
+
+public class ProjectWork {
+    private Long id;
+    //private TeachingPlan teachingPlan;
+    private String class;
+    private String division;
+    private Course course;
+    private List<StudentProject> studentProjects;
+}
+
+public class StudentProject {
+    private Long id;
+    private Long rollNumber;
+    private String studentName;
+    private String projectTitle;
+    private String certificate;
+}
+
+public class ResearchStudent {
+    private Long id;
+    private String academicYear;
+    private PHDRegisteredStudent phdRegisteredStudent;
+    private PHDDeclaration phdDeclaration;
+}
+
+public class PHDRegisteredStudent {
+    private Long id;
+    private String studentName;
+    private String title;
+    private Date registrationDate;
+    private String researchCentre;
+    private String certificate;     //document
+}
+
+public class PHDDeclarartion {
+    private Long id;
+    private String studentName;
+    private String title;
+    private Date registrationDate;
+    private Date dateOfDeclaration;
+    private String researchCentre;
+    private String certificate;
+}
