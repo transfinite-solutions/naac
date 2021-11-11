@@ -23,6 +23,7 @@ public class ScholarshipData {
 
 public class GovernmentScholarship {
     private Long id;
+    private String academicYear;
     private String scholarshipScheme;
     private Long noOfStudent;
     private Long amount;
@@ -33,6 +34,7 @@ public class GovernmentScholarship {
 
 public class InstitutionalScholarship {
     private Long id;
+    private String academicYear;
     private String scholarshipScheme;
     private String awardingAgency;
     private Long noOfStudent;
