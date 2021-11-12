@@ -1,17 +1,16 @@
-package one.transfinite.naac.user;
+package one.transfinite.naac.role;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-import one.transfinite.naac.utilities.RoleName;
+import lombok.*;
 
 import javax.persistence.*;
 
 @Entity
 @Table(name = "role")
-@Data
+@Getter
+@Setter
+@ToString
+@RequiredArgsConstructor
 @AllArgsConstructor
-@NoArgsConstructor
 public class Role {
 
     @Id
@@ -19,5 +18,7 @@ public class Role {
     @Column(name = "role_id", nullable = false)
     private Long id;
 
+    @Enumerated(EnumType.STRING)
+    @Column(nullable = false)
     private RoleName roleName;
 }

@@ -1,4 +1,4 @@
-package one.transfinite.naac.utilities;
+package one.transfinite.naac.role;
 
 public enum RoleName {
     Admin,
