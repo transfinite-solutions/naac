@@ -1,6 +1,9 @@
 package one.transfinite.naac.hod;
 
 import lombok.*;
+import one.transfinite.naac.publication.BookPublication;
+import one.transfinite.naac.publication.PaperPresented;
+import one.transfinite.naac.publication.ResearchPublication;
 import one.transfinite.naac.qualification.EntranceQualification;
 import one.transfinite.naac.qualification.PGQualification;
 import one.transfinite.naac.qualification.ResearchQualification;

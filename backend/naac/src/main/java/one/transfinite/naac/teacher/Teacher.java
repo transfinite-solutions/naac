@@ -1,6 +1,11 @@
 package one.transfinite.naac.teacher;
 
 import lombok.*;
+import one.transfinite.naac.program.FacultyProgram;
+import one.transfinite.naac.program.FacultySeminar;
+import one.transfinite.naac.publication.BookPublication;
+import one.transfinite.naac.publication.PaperPresented;
+import one.transfinite.naac.publication.ResearchPublication;
 import one.transfinite.naac.qualification.EntranceQualification;
 import one.transfinite.naac.qualification.PGQualification;
 import one.transfinite.naac.qualification.ResearchQualification;

@@ -1,8 +1,8 @@
 package one.transfinite.naac.teaching_plan;
 
 import lombok.*;
-import one.transfinite.naac.department.Course;
-import one.transfinite.naac.department.Program;
+import one.transfinite.naac.course.Course;
+import one.transfinite.naac.program.Program;
 
 import javax.persistence.*;
 

@@ -19,8 +19,10 @@ public class StudentCourseMapping {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-//    @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-//    private InternalAssessment internalAssessment;
+/*
+ @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+ private InternalAssessment internalAssessment;
+*/
 
     @OneToOne
     @JoinColumn(name = "student_student_id")

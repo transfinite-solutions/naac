@@ -1,7 +1,7 @@
 package one.transfinite.naac.student;
 
 import lombok.*;
-import one.transfinite.naac.department.Program;
+import one.transfinite.naac.program.Program;
 import one.transfinite.naac.user.User;
 
 import javax.persistence.*;

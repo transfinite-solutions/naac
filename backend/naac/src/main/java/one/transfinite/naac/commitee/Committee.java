@@ -10,11 +10,9 @@ import java.util.List;
 
 @Entity
 @Table(name = "committee")
-@Getter
-@Setter
-@ToString
-@RequiredArgsConstructor
+@Data
 @AllArgsConstructor
+@NoArgsConstructor
 public class Committee {
 
     @Id

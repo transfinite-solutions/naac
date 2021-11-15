@@ -1,6 +1,7 @@
 package one.transfinite.naac.commitee;
 
 import lombok.*;
+import one.transfinite.naac.report.ReportOfActivities;
 import org.hibernate.annotations.Fetch;
 import org.hibernate.annotations.FetchMode;
 
